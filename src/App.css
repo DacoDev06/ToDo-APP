@@ -1,0 +1,16 @@
+.ToDo{
+
+    width: 100%;
+    height: 93vh;
+    max-width: 378px;
+    box-sizing: border-box;
+    
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+
+@media (min-width:640px){
+    .ToDo{
+        height: 100vh;
+    }
+}

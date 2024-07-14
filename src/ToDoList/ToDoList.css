@@ -1,0 +1,28 @@
+.List-container{
+
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 5px 0px;
+}
+.List-container::-webkit-scrollbar{
+    display: none;
+    
+}
+
+.ToDoList{
+    width:85%;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: visible;
+
+    gap: 20px;
+}
