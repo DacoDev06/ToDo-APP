@@ -19,20 +19,29 @@ import React from 'react';
 // localStorage.clear
 // localStorage.removeItem
 
+const useLocalStorage = (itemName,initialValue)=>{
+  const [item,setItem] = React.useState(JSON.parse(localStorage.getItem(itemName)) || initialValue)
+
+  function saveToDos(newToDos){
+    setItem(newToDos)
+    localStorage.setItem(itemName,JSON.stringify(newToDos))
+  }
+  return [item,saveToDos]
+}
+
 
 
 function ToDoApp(){
-  const [ToDos,setToDos] = React.useState(()=> JSON.parse(localStorage.getItem('ToDos')) || [])
+  const [ToDos,saveToDos] = useLocalStorage()
+  
+  
+  
+  
+  
   const [InputValue,setInputValue] = React.useState('')
-
   const filterToDos = ToDos.filter(todo => todo.text.toLowerCase().includes(InputValue.toLowerCase())
   //ERROR EN EL INCLUDES
   )
-
-  function saveToDos(newToDos){
-    setToDos(newToDos)
-    localStorage.setItem('ToDos',JSON.stringify(newToDos))
-  }
 
   const changeStateToDo = (id)=>{
     const newToDos = [...ToDos]
