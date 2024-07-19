@@ -3,6 +3,7 @@ import {ToDoSearch} from '../Components/ToDoSearch'
 import {ToDoList} from '../Components/ToDoList'
 import {ToDoItem} from '../Components/ToDoItem'
 import {ToDoAddButton} from '../Components/ToDoAddButton'
+import {LoadingToDos} from '../Components/LoadingToDos'
 
 
 
@@ -31,7 +32,13 @@ function AppUI({
         />
 
         <ToDoList>
-          {loading && <>Cargando...</>}
+          {loading && <>
+          <LoadingToDos/>
+          <LoadingToDos/>
+          <LoadingToDos/>
+          <LoadingToDos/>
+          <LoadingToDos/>
+          </>}         
           {error && <>Hubo un error</>}
           {(!loading && filterToDos.length === 0) && <>Crea un ToDo</>}
           {(!loading && filterToDos.length !==0) && filterToDos.map(todo =>

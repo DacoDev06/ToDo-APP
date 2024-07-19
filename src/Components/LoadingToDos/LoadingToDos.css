@@ -1,0 +1,47 @@
+.loadingTodos--Item{
+    width: 100%;
+    max-width: 854px;
+    height: 46px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 15px;
+    box-sizing: border-box;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 20px;
+    background-color: #000000;
+}
+
+.loadingToDo--icon{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+
+}
+.loadingToDo--text{
+    margin: 0;
+}
+
+.loadingToDo--icon,
+.loadingToDo--text,
+.loadingTodos--Item{
+    background: linear-gradient(90deg,#000000,#875d39);
+    background-size: 400% 400%;
+    animation: loadingAnimation 2.5s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+
+    
+}

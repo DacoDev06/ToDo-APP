@@ -4,7 +4,6 @@ import './ToDoList.css'
 function ToDoList(props){
     return (
         <div className="List-container">
-        
             <ul className="ToDoList">
                 {props.children}
             </ul>
