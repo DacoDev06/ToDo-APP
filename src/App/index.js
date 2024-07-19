@@ -12,7 +12,12 @@ import {useLocalStorage} from '../Hooks/localStorage.js'
 
 
 function ToDoApp(){
-  const [ToDos,saveToDos] = useLocalStorage('ToDos',[])
+  const {
+    item:ToDos,
+    saveItem:saveToDos,
+    loading,
+    error
+  } = useLocalStorage('ToDos',[])
   
   const [InputValue,setInputValue] = React.useState('')
   const filterToDos = ToDos.filter(todo => todo.text.toLowerCase().includes(InputValue.toLowerCase())
@@ -52,6 +57,8 @@ function ToDoApp(){
       completedToDos={completedToDos}
       InputValue={InputValue}
       setInputValue={setInputValue}
+      loading={loading}
+      error={error}
       filterToDos={filterToDos}
       changeStateToDo={changeStateToDo}
       deleteToDo={deleteToDo}

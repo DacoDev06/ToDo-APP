@@ -11,6 +11,8 @@ function AppUI({
     completedToDos,
     InputValue,
     setInputValue,
+    loading,
+    error,
     filterToDos,
     changeStateToDo,
     deleteToDo
@@ -29,7 +31,10 @@ function AppUI({
         />
 
         <ToDoList>
-          {filterToDos.map(todo =>
+          {loading && <>Cargando...</>}
+          {error && <>Hubo un error</>}
+          {(!loading && filterToDos.length === 0) && <>Crea un ToDo</>}
+          {(!loading && filterToDos.length !==0) && filterToDos.map(todo =>
             <ToDoItem
               key={todo.id}
               text ={todo.text}
