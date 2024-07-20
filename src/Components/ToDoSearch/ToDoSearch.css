@@ -1,11 +1,19 @@
+.inputSearchContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
 .ToDoSearch{
-    align-self: center;
-    justify-self: center;
+    
     margin: 12px 0px 18px 0px;
     width: 65%;
     height: 45px;
     box-shadow: 1px 4px 16px #df8f45;
     border:none;
+    position: relative;
+    left: 7px;
 
     background-color: #df8f45;
     
@@ -20,6 +28,24 @@
     
     text-align: center;
 
+}
+.inputCross{
+    color: white;
+    position: relative;
+    right: 15px;
+    bottom: 2px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.inputCross:hover{
+    border: 1px solid #864d18;
+    color: #824b18;
+}
+
+.inputCross:active{
+    border: 1px solid #000000;
+    color: #000000;
 }
 
 .ToDoSearch::placeholder{

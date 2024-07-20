@@ -1,0 +1,22 @@
+.addToDoButton{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 0px 8px;
+    border: none;
+    background-color: rgb(63, 246, 108);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight:600;
+
+    cursor: pointer;
+}
+.addToDoButton:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(128, 244, 157);
+    border:1px solid rgb(63, 246, 108);
+}
+.addToDoButton:active{
+    background-color: rgb(63, 246, 108);
+    color: rgb(255, 255, 255);
+}

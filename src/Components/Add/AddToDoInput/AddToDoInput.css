@@ -1,0 +1,21 @@
+.addToDoInput{
+    width: 80%;
+    color: #ffffff;
+    height: 80px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    background: linear-gradient(#b95c22,#f38b1d) ;
+
+
+}
+.addToDoInput::placeholder{
+    color: white;
+    font-family: 'Raleway';
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.addToDoInput:focus{
+    outline-color: #ffffff;
+}

@@ -11,11 +11,25 @@ function ToDoContextProvider({children}){
     error
   } = useLocalStorage('ToDos',[])
   
-  const [OpenPortal,setOpenPortal] = React.useState(false)
+  const [addToDoInput,setAddToDoInput] = React.useState('')
+  const [openModal,setOpenModal] = React.useState(false)
   const [InputValue,setInputValue] = React.useState('')
   const filterToDos = ToDos.filter(todo => todo.text.toLowerCase().includes(InputValue.toLowerCase())
   //ERROR EN EL INCLUDES
   )
+  const addToDo = (text)=>{
+    const newToDos = [...ToDos]
+    let index = 1;
+    // eslint-disable-next-line
+    newToDos.map((todo)=>{
+      todo.id = index
+      index++
+      }
+    )
+    const newToDo = {text:text,id:index,isCompleted : false}
+    newToDos.push(newToDo)
+    saveToDos(newToDos)
+  }
 
   const changeStateToDo = (id)=>{
     const newToDos = [...ToDos]
@@ -40,7 +54,7 @@ function ToDoContextProvider({children}){
     saveToDos(newToDos)
   }
   
-
+  
   const totalToDos = ToDos.length
   const completedToDos = ToDos.filter( todo => todo.isCompleted === true).length
 
@@ -56,8 +70,11 @@ function ToDoContextProvider({children}){
         filterToDos,
         changeStateToDo,
         deleteToDo,
-        OpenPortal,
-        setOpenPortal
+        openModal,
+        setOpenModal,
+        addToDoInput,
+        setAddToDoInput,
+        addToDo
         }
     }>
         {children}

@@ -7,6 +7,7 @@ import {LoadingToDos} from '../Components/LoadingToDos'
 import React from 'react';
 import { ToDoContext } from '../Context/ToDoContext';
 import {Modal} from '../Components/Modal'
+import {Add} from '../Components/Add'
 
 
 
@@ -17,7 +18,7 @@ function AppUI(){
       filterToDos,
       changeStateToDo,
       deleteToDo,
-      OpenPortal
+      openModal
     } = React.useContext(ToDoContext)
 
     return(
@@ -50,9 +51,9 @@ function AppUI(){
         
         </div>
           <ToDoAddButton/>
-        {OpenPortal && 
+        {openModal && 
           <Modal>
-            Agregando un reactPortal
+            <Add/>
           </Modal>
         }
     </>

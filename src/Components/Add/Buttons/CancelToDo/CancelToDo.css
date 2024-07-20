@@ -1,0 +1,20 @@
+.cancelToDoButton{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 0px 8px;
+    color: white;
+    background-color: rgb(243, 49, 49);
+    border: 1px solid rgb(243, 49, 49);
+    font-size: 18px;
+    font-weight:600;
+    cursor: pointer;
+}
+.cancelToDoButton:hover{
+    color: white;
+    background-color: rgb(244, 87, 87);
+}
+.cancelToDoButton:active{
+    color: white;
+    background-color: rgb(243, 49, 49);
+}

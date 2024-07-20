@@ -9,8 +9,14 @@
     margin: 5px 0px;
 }
 .List-container::-webkit-scrollbar{
-    display: none;
-    
+    width: 4px; 
+}
+.List-container::-webkit-scrollbar-thumb {
+    background: #ca720e; /* Color de la manilla */
+    border-radius: 6px; /* Redondea los bordes de la manilla */
+}
+.List-container::-webkit-scrollbar-thumb:hover {
+    background: #e38c00; /* Color de la manilla al pasar el mouse */
 }
 
 .ToDoList{
