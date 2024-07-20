@@ -1,7 +1,7 @@
 import React from "react";
 import './ToDoAddButton.css'
 
-function ToDoAddButton(props){
+function ToDoAddButton(){
     return (
         <button className="ToDoAddButton">+</button>
     )

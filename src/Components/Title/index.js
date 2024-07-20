@@ -1,7 +1,13 @@
 import React from "react";
 import './Tittle.css'
+import { ToDoContext } from "../../Context/ToDoContext";
 
-function Title({completedToDos,totalToDos}){
+function Title(){
+    const {
+        completedToDos,
+        totalToDos
+    } = React.useContext(ToDoContext)
+    
     return(
         <h1 className="Title">
             {totalToDos!==0 ? 
