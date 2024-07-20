@@ -6,6 +6,7 @@ import {ToDoAddButton} from '../Components/ToDoAddButton'
 import {LoadingToDos} from '../Components/LoadingToDos'
 import React from 'react';
 import { ToDoContext } from '../Context/ToDoContext';
+import {Modal} from '../Components/Modal'
 
 
 
@@ -15,7 +16,8 @@ function AppUI(){
       error,
       filterToDos,
       changeStateToDo,
-      deleteToDo
+      deleteToDo,
+      OpenPortal
     } = React.useContext(ToDoContext)
 
     return(
@@ -34,7 +36,7 @@ function AppUI(){
             <LoadingToDos/>
             </>}         
             {error && <>Hubo un error</>}
-            {(!loading && filterToDos.length === 0) && <>Crea un ToDo</>}
+            {(!loading && filterToDos.length === 0) && <></>}
             {(!loading && filterToDos.length !==0) && filterToDos.map(todo =>
               <ToDoItem
                 key={todo.id}
@@ -48,6 +50,11 @@ function AppUI(){
         
         </div>
           <ToDoAddButton/>
+        {OpenPortal && 
+          <Modal>
+            Agregando un reactPortal
+          </Modal>
+        }
     </>
     )
 }

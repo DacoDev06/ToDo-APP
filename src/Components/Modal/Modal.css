@@ -1,0 +1,16 @@
+.modalStyle{
+    background-color: rgb(32,35,41,.8);
+
+    position: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    color: white;
+}
